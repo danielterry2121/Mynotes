@@ -1,0 +1,96 @@
+//DOM
+/*
+Document Object Model 
+-An object representation of the html elements of a web page
+-Language neutral API
+=tree like structure representing your content structure and style
+*/
+//DOM selectors
+
+/*
+to access the dom use 'document'
+
+ex. 
+	document.getElementsByTagName('div'); // this would select all elements with the div tag name.
+	-in the dom this would pull up an 'HTMLCollection - which acts sort of as an array and holds what would be returned.
+	
+	document.getElementsByClassName('nav-item'); // select all elements with this class
+	
+	document.getElementById('intro-info'); //select that single element 
+	
+	document.querySelector('#intro-info'); // can take any value class, id, element. 
+	document.querySelector('.nav-Item'); // but you'll only get the first returned unless you use querySelectorAll
+	document.querySelectorAll('div'); //example of all 
+	
+	//difference between node list and an array
+	
+	-you can use for each with node list but that is the only similarity.
+		to use map or filter or any array method you must take the array prototype and use from 
+		to actually return an array.
+		
+*/
+/*
+// Methods and selectors
+
+	-const introText = document.querySelector('#intro-info p'); grabbed the paragraph tag of this ID element!
+		//manipulating text content
+		
+		introText.textContent = "whatever put here will replace the text content in this variable.";
+		
+	//set attribute
+	
+	const catImg = document.querySelector('img');
+		catImg.setAttribute('src','whatever you want to change the attribute too / ex. https.../img/link')
+		
+	can also change like 
+	catImg.src = "https/img/bah";
+	
+	
+	//style - .style is a property holding every CSS property in the dom
+	
+		const headline = document.querySelector('header');
+		
+		headline.style.fontSize = '5rem'; //example of changing the font size
+		headline.style.color = 'red'; // changing header font color to red
+		
+	//className
+		const header = document.querySelector('header');
+		header.className = 'green'; // gives the class or changes the class to selected
+		//you can also do the same with ID's
+		
+		
+	//classList
+	
+	header.classList //would return a list of your classes
+	header.classList.add('large'); //adds a class
+	header.classLst.remove('large'); // removes a class
+	
+	//toggle
+	
+	header.classList.toggle('green'); //turns off or on a class 
+	
+	/*
+	
+	
+	
+	/*
+	
+	CREATING ELEMENTS AND ADDING THEM TO THE DOM
+	
+		const headerEl = document.querySelector('header');
+		const subHeadLine = document.createElement('h1'); //creates an h1
+		
+		subHeadLine.textContent = "Another Headline!"; //assignds the text 
+		subHeadLine.style.fontSize = "3.4rem"; //increase font size
+		subHeadline.style.color = "slategrey"; //change color
+		
+		headerEl.appendChild(subHeadLine); //appends child to the end of the container
+		
+		const section = document.querySelector('section');
+		
+		section.style.flexwrap = "wrap"; //change it to flex wrap
+		section.style.justifyContent = "center"; //changes index
+		const newCat = document.createElement('img'); //creates an img
+		newCat.src = "https..." // finds img
+		
+		section.prepend('newCat'); // appends child at the begining of the container!
